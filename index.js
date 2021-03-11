@@ -11,14 +11,14 @@ console.log(process.env.NODE_ENV)
 
 //We only want cors in Developement this time, this is going to be full stack app, so online will be from same location. In dev, it's different ports
 // on Heroku machine, an env variable is called "NODE_ENV" --> "production" or "devlopment"
-if (process.env.NODE_ENV === 'devlopment') { 
+if (process.env.NODE_ENV === 'development') { 
   const cors = require('cors') 
   server.use(cors())
 }
 
 // our api comes earlier in the pipeline
 server.get('/api/hello', (req, res) => {
-  res.json({ message: 'hello' })
+  res.json({ message: 'WOOT IT WORKS' })
 })
 
 // catch-all that just sends back index.html
