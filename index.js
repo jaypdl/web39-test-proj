@@ -16,6 +16,10 @@ if (process.env.NODE_ENV === 'devlopment') {
   server.use(cors())
 }
 
+server.use('*', (req, res) => {
+  res.send('<h1>SUCCESS woot</h1>')
+})
+
 const PORT = process.env.PORT || 4000
 
 server.listen(PORT, () => {
